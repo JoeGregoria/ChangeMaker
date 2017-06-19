@@ -19,5 +19,15 @@ namespace test
             ChangeMaker changeMaker = new ChangeMaker();
             Assert.Equal(2,changeMaker.MakeChange(0.02m).PenniesCount);
         }
+
+                [Fact]
+        public void Dot05ShoudlReturn1Nickle()
+        {
+            ChangeMaker changeMaker = new ChangeMaker();
+            Change change = changeMaker.MakeChange(0.05m);
+            Console.WriteLine(change);
+            Assert.Equal(1,change.NicklesCount);
+            Assert.Equal(0,change.PenniesCount);
+        }
     }
 }
