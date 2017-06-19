@@ -7,6 +7,7 @@ namespace src
         public Change MakeChange(decimal money)
         {
             if (money >= 1) throw new Exception("only want the change bits");
+            if (money < 0) throw new Exception("no negatives allowed");
 
             int changeLeft = (int)(money * 100);
             var change = new Change();
