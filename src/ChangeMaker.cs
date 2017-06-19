@@ -11,6 +11,12 @@ namespace src
             int changeLeft = (int)(money * 100);
             var change = new Change();
             
+            while ((changeLeft >= 25))
+            {
+                change.QuartersCount++;
+                changeLeft=changeLeft-25;
+            }
+
             while ((changeLeft >= 10))
             {
                 change.DimesCount++;
