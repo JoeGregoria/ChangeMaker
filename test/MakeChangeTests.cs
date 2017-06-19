@@ -40,5 +40,16 @@ namespace test
             Assert.Equal(0,change.NicklesCount);
             Assert.Equal(0,change.PenniesCount);
         }
+
+        [Fact]
+        public void Dot16ShoudlReturn1Dime1Nickel1Penny()
+        {
+            ChangeMaker changeMaker = new ChangeMaker();
+            Change change = changeMaker.MakeChange(0.16m);
+            Console.WriteLine(change);
+            Assert.Equal(1,change.DimesCount);
+            Assert.Equal(1,change.NicklesCount);
+            Assert.Equal(1,change.PenniesCount);
+        }
     }
 }
