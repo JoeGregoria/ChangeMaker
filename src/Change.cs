@@ -7,16 +7,12 @@ namespace src
     {
         public int PenniesCount {set; get;}
         public int NicklesCount { get; set; }
-
-        public Change()
-        {
-            PenniesCount = 0;
-            NicklesCount = 0;
-        }
+        public int DimesCount {get; set;}
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{DimesCount} Dimes");
             sb.AppendLine($"{NicklesCount} Nickles");
             sb.AppendLine($"{PenniesCount} Pennies");
             return sb.ToString();

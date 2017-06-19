@@ -10,6 +10,13 @@ namespace src
 
             int changeLeft = (int)(money * 100);
             var change = new Change();
+            
+            while ((changeLeft != 0) && (changeLeft % 10 == 0))
+            {
+                change.DimesCount++;
+                changeLeft=changeLeft-10;
+            }
+
 
             while ((changeLeft != 0) && (changeLeft % 5 == 0))
             {

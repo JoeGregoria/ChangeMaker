@@ -20,13 +20,24 @@ namespace test
             Assert.Equal(2,changeMaker.MakeChange(0.02m).PenniesCount);
         }
 
-                [Fact]
+        [Fact]
         public void Dot05ShoudlReturn1Nickle()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.05m);
             Console.WriteLine(change);
             Assert.Equal(1,change.NicklesCount);
+            Assert.Equal(0,change.PenniesCount);
+        }
+
+        [Fact]
+        public void Dot10ShoudlReturn1Dime()
+        {
+            ChangeMaker changeMaker = new ChangeMaker();
+            Change change = changeMaker.MakeChange(0.1m);
+            Console.WriteLine(change);
+            Assert.Equal(1,change.DimesCount);
+            Assert.Equal(0,change.NicklesCount);
             Assert.Equal(0,change.PenniesCount);
         }
     }
