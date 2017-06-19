@@ -14,14 +14,14 @@ namespace test
         }
 
         [Fact]
-        public void Dot02ShoudlReturn2Pennies()
+        public void Dot02ShouldReturn2Pennies()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Assert.Equal(2,changeMaker.MakeChange(0.02m).PenniesCount);
         }
 
         [Fact]
-        public void Dot05ShoudlReturn1Nickle()
+        public void Dot05ShouldReturn1Nickle()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.05m);
@@ -30,7 +30,7 @@ namespace test
         }
 
         [Fact]
-        public void Dot10ShoudlReturn1Dime()
+        public void Dot10ShouldReturn1Dime()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.1m);
@@ -40,7 +40,7 @@ namespace test
         }
 
         [Fact]
-        public void Dot16ShoudlReturn1Dime1Nickel1Penny()
+        public void Dot16ShouldReturn1Dime1Nickel1Penny()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.16m);
@@ -50,7 +50,7 @@ namespace test
         }
 
         [Fact]
-        public void Dot25ShoudlReturn1Quarter()
+        public void Dot25ShouldReturn1Quarter()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.25m);
@@ -61,7 +61,7 @@ namespace test
         }
 
         [Fact]
-        public void Dot99ShoudlReturn3Quarter2Dimes0Nickels4Pennies()
+        public void Dot99ShouldReturn3Quarter2Dimes0Nickels4Pennies()
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.99m);

@@ -22,6 +22,8 @@ namespace src
             return change;
         }
 
+
+
         private int ProcessQuarters(int amount, Change change)
         {
             change.QuartersCount = GetNumberOfCoins(25, amount, out int remainingValue);
