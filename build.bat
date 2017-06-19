@@ -4,6 +4,9 @@
 dotnet --version
 if %ERRORLEVEL% GEQ 1 GOTO EnvironmentError
 
+dotnet restore 
+if %ERRORLEVEL% GEQ 1 GOTO BuildError
+
 dotnet build 
 if %ERRORLEVEL% GEQ 1 GOTO BuildError
 
