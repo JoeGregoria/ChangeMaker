@@ -25,7 +25,7 @@ namespace test
         {
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.05m);
-            Assert.Equal(1,change.NicklesCount);
+            Assert.Equal(1,change.NickelsCount);
             Assert.Equal(0,change.PenniesCount);
         }
 
@@ -35,7 +35,7 @@ namespace test
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.1m);
             Assert.Equal(1,change.DimesCount);
-            Assert.Equal(0,change.NicklesCount);
+            Assert.Equal(0,change.NickelsCount);
             Assert.Equal(0,change.PenniesCount);
         }
 
@@ -45,7 +45,7 @@ namespace test
             ChangeMaker changeMaker = new ChangeMaker();
             Change change = changeMaker.MakeChange(0.16m);
             Assert.Equal(1,change.DimesCount);
-            Assert.Equal(1,change.NicklesCount);
+            Assert.Equal(1,change.NickelsCount);
             Assert.Equal(1,change.PenniesCount);
         }
 
@@ -56,7 +56,7 @@ namespace test
             Change change = changeMaker.MakeChange(0.25m);
             Assert.Equal(1,change.QuartersCount);
             Assert.Equal(0,change.DimesCount);
-            Assert.Equal(0,change.NicklesCount);
+            Assert.Equal(0,change.NickelsCount);
             Assert.Equal(0,change.PenniesCount);
         }
 
@@ -67,7 +67,7 @@ namespace test
             Change change = changeMaker.MakeChange(0.99m);
             Assert.Equal(3,change.QuartersCount);
             Assert.Equal(2,change.DimesCount);
-            Assert.Equal(0,change.NicklesCount);
+            Assert.Equal(0,change.NickelsCount);
             Assert.Equal(4,change.PenniesCount);
         }     
 
@@ -96,7 +96,7 @@ namespace test
             Change change = changeMaker.MakeChange(0m);
             Assert.Equal(0,change.QuartersCount);
             Assert.Equal(0,change.DimesCount);
-            Assert.Equal(0,change.NicklesCount);
+            Assert.Equal(0,change.NickelsCount);
             Assert.Equal(0,change.PenniesCount);
         }                    
     }

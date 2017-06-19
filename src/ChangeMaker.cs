@@ -12,26 +12,47 @@ namespace src
             int changeLeft = (int)(money * 100);
             var change = new Change();
             
-            while ((changeLeft >= 25))
-            {
-                change.QuartersCount++;
-                changeLeft=changeLeft-25;
-            }
+            changeLeft = ProcessQuarters(changeLeft, change);
 
-            while ((changeLeft >= 10))
-            {
-                change.DimesCount++;
-                changeLeft=changeLeft-10;
-            }
+            changeLeft = ProcessDimes(changeLeft, change);
 
-            while (changeLeft >= 5)
-            {
-                change.NicklesCount++;
-                changeLeft=changeLeft-5;
-            }
+            changeLeft = ProcessNickels(changeLeft, change);
 
             change.PenniesCount = changeLeft;
             return change;
+        }
+
+        private int ProcessQuarters(int amount, Change change)
+        {
+            change.QuartersCount = GetNumberOfCoins(25, amount, out int remainingValue);
+            return remainingValue;
+        }
+
+        private int ProcessDimes(int amount, Change change)
+        {
+            change.DimesCount = GetNumberOfCoins(10, amount, out int remainingValue);
+            return remainingValue;
+        }
+
+        private int ProcessNickels(int amount, Change change)
+        {
+            change.NickelsCount = GetNumberOfCoins(5, amount, out int remainingValue);
+            return remainingValue;
+        }
+
+        private int GetNumberOfCoins(int coinValue, int amount, out int remainingValue)
+        {
+            int coinCount = 0;
+            int leftToProcess = amount;
+
+            while ((leftToProcess >= coinValue))
+            {
+                coinCount++;
+                leftToProcess=leftToProcess-coinValue;
+            }
+
+            remainingValue = leftToProcess;
+            return coinCount;
         }
     }
 }
