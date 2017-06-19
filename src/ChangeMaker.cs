@@ -4,10 +4,11 @@ namespace src
 {
     public class ChangeMaker
     {
-        public Change MakeChange(double money)
+        public Change MakeChange(decimal money)
         {
+            decimal moneyLeft = money;
             var change = new Change();
-            change.PenniesCount = 1;
+            change.PenniesCount = (int) moneyLeft;
             return change;
         }
     }

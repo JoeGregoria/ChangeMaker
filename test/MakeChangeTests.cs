@@ -10,7 +10,14 @@ namespace test
         public void Dot01ShouldReturn1Penny()
         {
             ChangeMaker changeMaker = new ChangeMaker();
-            Assert.Equal(1,changeMaker.MakeChange(0.01).PenniesCount);
+            Assert.Equal(1,changeMaker.MakeChange(0.01m).PenniesCount);
+        }
+
+        [Fact]
+        public void Dot02ShoudlReturn2Pennies()
+        {
+            ChangeMaker changeMaker = new ChangeMaker();
+            Assert.Equal(2,changeMaker.MakeChange(0.02m).PenniesCount);
         }
     }
 }
